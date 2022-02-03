@@ -7,7 +7,18 @@
 <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
 <script>
     const root = document.getElementById("root");
-    const span = React.createElement("span",{id:"sexy-span", style:{color:"red"}}, "Hellp I`m a Span");
-    ReactDOM.render(span,root);
+    const h3 = React.createElement("h3",{
+      id:"title",
+      onMouseEnter: () => console.log("Mouse Enter"), // 중간 단어 대문자로 할것
+    }, "Hellp I`m a Span");
+    const btn = React.createElement("button",{
+      onClick: () => console.log("Clicked"),
+      style:{
+        backgroundColor:"tomato",
+      }
+    },"Click me");
+    const container = React.createElement("div",null,[h3,btn]);
+    
+    ReactDOM.render(container,root);
 </script>
 </html>
